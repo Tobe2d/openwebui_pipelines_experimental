@@ -63,7 +63,6 @@ class ReplicateImageGenerator:
 
 # Entry function to handle the request and return the image URL
 async def pipeline(body: dict, __user__: Optional[dict] = None, __event_emitter__: Optional[Callable[[dict], Awaitable[None]]] = None) -> dict:
-    # Example pipeline logic
     generator = ReplicateImageGenerator()
     prompt = body.get("prompt", "A beautiful landscape")  # Default prompt
     image_url = await generator.generate_image(prompt, __event_emitter__)
